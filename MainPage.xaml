@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppJogoDaVelha1.MainPage">
+
+    <!-- Fundo com Gradiente -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#0F0C29" Offset="0.0" />
+            <GradientStop Color="#302B63" Offset="0.5" />
+            <GradientStop Color="#24243E" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Resources>
+        <!-- Estilo e Fixação de Dimensões dos Botões -->
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#1F1938" />
+            <Setter Property="CornerRadius" Value="18" />
+            <Setter Property="TextColor" Value="#00F3FF" />
+            <Setter Property="FontSize" Value="55" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BorderColor" Value="#6C5CE7" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="VerticalOptions" Value="Fill" />
+            <Setter Property="HeightRequest" Value="105" />
+            <Setter Property="Shadow">
+                <Shadow Brush="Black" Offset="0,4" Radius="8" Opacity="0.4" />
+            </Setter>
+
+            <!-- Mantém a mesma aparência/formato de quando o jogo inicia-->
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#1F1938" />
+                                <Setter Property="BorderColor" Value="#6C5CE7" />
+                                <Setter Property="Opacity" Value="1.0" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, 105, 105, 105" 
+          ColumnDefinitions="*, *, *"
+          ColumnSpacing="15" 
+          RowSpacing="15" 
+          Margin="20"
+          VerticalOptions="Center">
+
+        <!-- Estilo do título -->
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+               Text="JOGO DA VELHA" 
+               FontSize="30" 
+               FontAttributes="Bold" 
+               TextColor="#00F3FF" 
+               HorizontalTextAlignment="Center" 
+               VerticalTextAlignment="Center"
+               Margin="0,10,0,25" />
+
+        <!-- Tabuleiro 3x3 exibido Durante Todo o Jogo -->
+        <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Text="" Clicked="Button_Clicked" />
+        <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" Text="" Clicked="Button_Clicked" />
+        <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" Text="" Clicked="Button_Clicked" />
+
+        <Button x:Name="btn20" Grid.Row="2" Grid.Column="0" Text="" Clicked="Button_Clicked" />
+        <Button x:Name="btn21" Grid.Row="2" Grid.Column="1" Text="" Clicked="Button_Clicked" />
+        <Button x:Name="btn22" Grid.Row="2" Grid.Column="2" Text="" Clicked="Button_Clicked" />
+
+        <Button x:Name="btn30" Grid.Row="3" Grid.Column="0" Text="" Clicked="Button_Clicked" />
+        <Button x:Name="btn31" Grid.Row="3" Grid.Column="1" Text="" Clicked="Button_Clicked" />
+        <Button x:Name="btn32" Grid.Row="3" Grid.Column="2" Text="" Clicked="Button_Clicked" />
+
+    </Grid>
+
+</ContentPage>
